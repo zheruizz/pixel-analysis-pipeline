@@ -59,18 +59,18 @@ global_df["Timestamp"] = pd.to_numeric(global_df["Timestamp"], errors="coerce")
 # Drop rows with invalid timestamps (if any)
 global_df = global_df.dropna(subset=["Timestamp"])
 
-img_url = 'https://drive.google.com/uc?id=18bC43PP_jEsOoV866syDD8YdrbSp_6hH'
-try:
-    response = requests.get(img_url, stream=True)
-    response.raise_for_status()  # Check for HTTP errors
+# img_url = 'https://drive.google.com/uc?id=18bC43PP_jEsOoV866syDD8YdrbSp_6hH'
+# try:
+#     response = requests.get(img_url, stream=True)
+#     response.raise_for_status()  # Check for HTTP errors
 
-    # Read the image
-    img = Image.open(BytesIO(response.content))
+#     # Read the image
+#     img = Image.open(BytesIO(response.content))
 
-    # Open in a new pop-up window
-    img.show(title="Dataset Loading...")
-except Exception as e:
-    print(f"Warning: Failed to load image ({e}). Continuing execution...")
+#     # Open in a new pop-up window
+#     img.show(title="Dataset Loading...")
+# except Exception as e:
+#     print(f"Warning: Failed to load image ({e}). Continuing execution...")
 
 print("Dataset loaded successfully.")
 
